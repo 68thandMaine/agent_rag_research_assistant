@@ -1,17 +1,10 @@
 import { Mastra } from '@mastra/core/mastra';
-import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
+import { PgVector } from '@mastra/pg';
+import { researchAgent } from './agents/researchAgent';
 
+const pgVector = new PgVector({ connectionString: process.env.POSTGRES_CONNECTION_STRING! });
 
 export const mastra = new Mastra({
-  workflows: {  },
-  agents: {  },
-  storage: new LibSQLStore({
-    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db
-    url: ':memory:',
-  }),
-  logger: new PinoLogger({
-    name: 'Mastra',
-    level: 'info',
-  }),
+  agents: { researchAgent },
+  vectors: { pgVector },
 });
