@@ -1,0 +1,10 @@
+{
+  "projectContext": {
+    "rules": [
+      {
+        "pattern": "**/*",
+        "context": "This project is a Research Assistant Lab that demonstrates building a Retrieval-Augmented Generation (RAG) system using Mastra.ai. Key aspects:\n\n1. **Development Environment**:\n   - Uses Jupyter notebooks with TypeScript (tslab) kernel\n   - Requires Node.js >=20.9.0\n   - Implements ESLint and Prettier for code quality\n   - Uses conventional commits with Husky hooks\n\n2. **Core Technologies**:\n   - Mastra.ai framework for RAG implementation\n   - PGVector for vector storage\n   - OpenAI API for embeddings and LLM responses\n   - TypeScript with strict type checking\n\n3. **Architecture**:\n   - Research Agent with vector query capabilities\n   - Vector store for document embeddings\n   - Notebook-based interactive development with `globalThis` for state management\n\n4. **Requirements**:\n   - OpenAI API key\n   - Postgres connection string with PGVector extension\n   - Node.js environment\n\nThe project serves as an educational lab for understanding RAG systems, vector stores, and AI agent development using the Mastra framework."
+      }
+    ]
+  }
+} 

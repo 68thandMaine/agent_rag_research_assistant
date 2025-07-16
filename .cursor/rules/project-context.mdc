@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+---
+# RAG Research Assistant Lab
+
+This project is a Research Assistant Lab that demonstrates building a Retrieval-Augmented Generation (RAG) system using Mastra.ai. Key aspects:
+
+## 1. Development Environment
+
+- Uses Jupyter notebooks with TypeScript (tslab) kernel
+- Mastra.ai framework for RAG implementations
+- TypeScript with strict type checking
+---

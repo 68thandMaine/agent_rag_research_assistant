@@ -4,6 +4,27 @@ This project is optimized for viewing, editing, and running within a VSCode-like
 
 ## Prerequisites
 
+### Database Setup
+
+This project requires PostgreSQL with pgVector extension. The easiest way to set this up is using Docker:
+
+**Quick Setup:**
+```bash
+# Run the automated setup script
+./scripts/setup-database.sh
+```
+
+**Manual Setup:**
+```bash
+# Start PostgreSQL with pgVector
+docker-compose up -d
+
+# Create a .env file with your configuration
+cp .env.example .env  # Then edit with your OpenAI API key
+```
+
+For detailed database setup instructions, see [Database Setup Guide](docs/DATABASE_SETUP.md).
+
 ### Deno Installation
 
 1. **Check if Deno is installed:**
@@ -46,6 +67,8 @@ This project is optimized for viewing, editing, and running within a VSCode-like
 
 ## Requirements
 
+- **Docker & Docker Compose:** For PostgreSQL with pgVector
+- **OpenAI API Key:** Required for embeddings
 - **Deno Runtime:** Version 1.x or higher.
 - **VSCode:** Latest version recommended.
 - **VSCode Extensions:**
