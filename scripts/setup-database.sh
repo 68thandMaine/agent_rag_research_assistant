@@ -31,7 +31,7 @@ fi
 
 # Start PostgreSQL
 echo -e "${GREEN}Starting PostgreSQL container...${NC}"
-docker-compose up -d
+docker compose up -d
 
 # Wait for PostgreSQL to be ready
 echo -e "${GREEN}Waiting for PostgreSQL to be ready...${NC}"
@@ -39,7 +39,7 @@ MAX_ATTEMPTS=30
 ATTEMPT=0
 
 while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
-    if docker-compose exec -T postgres pg_isready -U rag_user -d rag_research_db > /dev/null 2>&1; then
+    if docker compose exec -T postgres pg_isready -U rag_user -d rag_research_db > /dev/null 2>&1; then
         echo -e "${GREEN}PostgreSQL is ready!${NC}"
         break
     fi
@@ -55,7 +55,7 @@ fi
 
 # Verify pgVector extension
 echo -e "${GREEN}Verifying pgVector extension...${NC}"
-docker-compose exec -T postgres psql -U rag_user -d rag_research_db -c "SELECT extname, extversion FROM pg_extension WHERE extname = 'vector';" | grep vector > /dev/null
+docker compose exec -T postgres psql -U rag_user -d rag_research_db -c "SELECT extname, extversion FROM pg_extension WHERE extname = 'vector';" | grep vector > /dev/null
 
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}pgVector extension is installed successfully!${NC}"

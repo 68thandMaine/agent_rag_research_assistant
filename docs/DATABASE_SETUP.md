@@ -14,7 +14,7 @@ This guide will help you set up a PostgreSQL database with pgVector extension fo
 Run the following command in the project root directory:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 This will:
@@ -40,13 +40,13 @@ POSTGRES_CONNECTION_STRING=postgresql://rag_user:rag_password@localhost:5432/rag
 You can verify the database is running with:
 
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 To connect to the database directly:
 
 ```bash
-docker-compose exec postgres psql -U rag_user -d rag_research_db
+docker compose exec postgres psql -U rag_user -d rag_research_db
 ```
 
 ### 4. Check pgVector Extension
@@ -70,13 +70,13 @@ The initialization script creates:
 To stop the database:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 To stop and remove all data:
 
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 ## Troubleshooting
@@ -85,7 +85,7 @@ docker-compose down -v
 
 If you get connection timeout errors:
 1. Ensure Docker is running
-2. Check if the container is healthy: `docker-compose ps`
+2. Check if the container is healthy: `docker compose ps`
 3. Verify no other service is using port 5432
 
 ### SSL Certificate Issues

@@ -1,6 +1,6 @@
 import { Agent } from '@mastra/core/agent';
 import { openai } from '@ai-sdk/openai';
-import { vectorQueryTool } from './tools/vector-query-tool'; // Adjust the import path as necessary
+import { vectorQueryTool } from '../tools/vectorQueryTool'; // Adjust the import path as necessary
 
 export const researchAgent = new Agent({
   name: 'Research Assistant',
